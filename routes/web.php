@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\Guest\PageController;
 use Illuminate\Support\Facades\Route;
-use App\Models\movies;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,7 +14,4 @@ use App\Models\movies;
 |
 */
 
-Route::get('/', function () {
-    dd(movies::all());
-    return view('welcome');
-});
+Route::get('/', [PageController::class, 'index']);
